@@ -1,41 +1,47 @@
 import webpack from 'webpack';
 import path from 'path';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import nodeExternals from 'webpack-node-externals';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
-const config = {
-  module: {
-    rules: [
-      {
-        test: /\.js?/,
-        exclude: /node_modules/,
-        include: SRC_DIR,
-        loader: 'babel-loader',
-      },
-    ]
-  },
-
-  // plugins: [
-  //   new CopyWebpackPlugin([
-  //     { from: SRC_DIR + '*.html', to: BUILD_DIR },
-  //   ], {
-  //     copyUnmodified: true,
-  //   })
-  // ],
-
-};
+const config = {};
 
 const clientConfig = {
-  ...config,
-
-  entry: SRC_DIR + '/client.jsx',
+  entry: SRC_DIR + '/client.js',
 
   output: {
     path: BUILD_DIR,
     filename: 'client.bundle.js',
   },
+
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        include: SRC_DIR,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.scss?$/,
+        include: SRC_DIR + '/components',
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Boilerplate (+ejs)',
+      template: 'src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
+    })
+  ],
 
   devServer: {
     contentBase: BUILD_DIR,
@@ -44,8 +50,6 @@ const clientConfig = {
 };
 
 const serverConfig = {
-  ...config,
-
   entry: SRC_DIR + '/server.js',
 
   output: {
@@ -53,7 +57,19 @@ const serverConfig = {
     filename: 'server.bundle.js',
   },
 
-  target:'node', // It is necessary to prevent errors using express (?) on the server
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        include: SRC_DIR,
+        loader: 'babel-loader',
+      },
+    ]
+  },
+
+  target: 'node', // It is necessary to prevent errors using express (?) on the server
+  externals: [nodeExternals()], // In order to ignore all modules in node_modules folder
 
 };
 
