@@ -7,11 +7,16 @@
     "type": "git",
     "url": "git://github.com/tatomyr/webpack-boilerplate.git"
   },
+  "engines": {
+    "node": "8.1.2",
+    "npm": "5.4.2"
+  },
   "scripts": {
-    "build": "./node_modules/.bin/webpack -p",
-    "dev": "./node_modules/.bin/webpack -d",
+    "build": "webpack -p",
+    "dev": "webpack -d --watch",
     "serve": "webpack-dev-server",
-    "server": "./node_modules/.bin/webpack -d && node dist/server.bundle.js",
+    "start": "babel-node server/server.js",
+    "postinstall": "npm i && webpack -p --config ./webpack.config.babel.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

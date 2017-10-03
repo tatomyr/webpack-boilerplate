@@ -4,7 +4,7 @@ import './style.scss';
 
 export default props => (
   <div>
-    <h1>Hello</h1>
+    <h1>Hello Server</h1>
     <div>{props.text}</div>
   </div>
 );

@@ -3,31 +3,31 @@ import express from 'express';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-
+// CORS resolutions
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.setHeader('Access-Control-Allow-Origin', process.env.ROOT_URL || 'http://localhost:8080');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 
-// app.get('/', (req, res, next) => {
-//   console.log('SERVER: GET=/');
-//   res.send('hello')
-// });
+// Provides a static server in case of deploying on a same host
+app.use(express.static('dist'));
 
+// REST api routes
 app.get('/api', (req, res) => {
   console.log('/api');
   res.end('current time: ' + new Date());
 });
 
+// Starting server
 const port = process.env.PORT || 8081;
 app.listen(port, () => {
   console.log(`
-
-    SERVER: LISTEN ON PORT ${port}
-
+_________________________________________
+|                                       |
+|    SERVER: LISTEN ON PORT ${port}        |
+|_______________________________________|
   `);
 });
