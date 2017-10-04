@@ -1,24 +1,20 @@
 import React from 'react';
 
-import Component from '../components/Component/index.js';
+import Component from '../components/Component/index';
 
 export default class AppContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      text: '...',
-    };
-  }
-
   static textToState(url, callback) {
     fetch(url)
       .then(res => res.text())
       .then(callback);
   }
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: '...',
+    };
   }
 
   componentWillMount() {
@@ -31,6 +27,10 @@ export default class AppContainer extends React.Component {
       `${location.hostname === 'localhost' ? 'http://localhost:8081' : ''}/api`,
       text => this.setState({ text })
     );
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
   }
 
   render() {

@@ -1,10 +1,16 @@
 # webpack-boilerplate
 
+## getting started
+
 To start phantom development server on `localhost:8080` type `npm run serve`. It allows you hot reloading for the client.
 To build server bundle & start server on `localhost:8081` type `npm run server`.
 If you want to serve your client files on this server, you have to build your client bundle with `npm run dev` or `npm run build` previously.
 
-# deployment
+## linting
+
+Install `linter` and `linter-eslint` plugins (in Atom).
+
+## deployment
 
 If you want to deploy frontend & backend on separated hosts, you'll have to specify `CLIENT_URL` as a config var on backend host server.
 

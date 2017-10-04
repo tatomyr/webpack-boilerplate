@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+
+  extends: [
+    'airbnb',
+    //'plugin:css-modules/recommended',
+  ],
+
+  "plugins": [
+    "react"
+  ],
+
+  rules: {
+    'import/no-extraneous-dependencies': 'off',
+    'react/jsx-filename-extension': 'off',
+    'comma-dangle': 'warn',
+    'react/prop-types': 'warn'
+  }
+}

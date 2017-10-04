@@ -1,4 +1,3 @@
-import path from 'path'
 import express from 'express';
 
 const app = express();
@@ -20,7 +19,7 @@ console.log(__dirname);
 // REST api routes
 app.get('/api', (req, res) => {
   console.log('/api');
-  res.end('current time: ' + new Date());
+  res.end(`current time: ${new Date()}`);
 });
 
 // Starting server
