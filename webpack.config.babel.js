@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const SRC_DIR = path.resolve(__dirname, 'src');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
+const PUBLIC_DIR = path.resolve(__dirname, 'dist/public')
 
 const config = {};
 
@@ -12,7 +13,7 @@ const clientConfig = {
   entry: SRC_DIR + '/client.js',
 
   output: {
-    path: BUILD_DIR,
+    path: PUBLIC_DIR,
     filename: 'client.bundle.js',
   },
 
@@ -44,7 +45,7 @@ const clientConfig = {
   ],
 
   devServer: {
-    contentBase: BUILD_DIR,
+    contentBase: PUBLIC_DIR,
   },
 
 };

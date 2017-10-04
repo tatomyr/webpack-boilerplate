@@ -27,10 +27,8 @@ export default class AppContainer extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount');
-    // this.setState({ text: '???' })
     AppContainer.textToState(
-      // 'https://www.reddit.com/r/reactjs/comments/7365tk/introducing_mobx_state_tree_a_mutable_immutable.json',
-      'http://localhost:8081/api',
+      `${location.hostname === 'localhost' ? 'http://localhost:8081' : ''}/api`,
       text => this.setState({ text })
     );
   }

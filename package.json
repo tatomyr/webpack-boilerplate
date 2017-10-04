@@ -15,8 +15,8 @@
     "build": "webpack -p",
     "dev": "webpack -d --watch",
     "serve": "webpack-dev-server",
-    "start": "babel-node server/server.js",
-    "postinstall": "npm i && webpack -p --config ./webpack.config.babel.js --progress",
+    "server": "webpack -p --config webpack.server-config.babel.js && cd dist/ && node server.bundle.js",
+    "deploy": "webpack -p && webpack -p --config webpack.server-config.babel.js && cd dist/ && git add . && git commit -m 'deployment commit' && git push heroku master  -f",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
