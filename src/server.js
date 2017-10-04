@@ -34,6 +34,5 @@ _________________________________________
 
 client url: ${process.env.CLIENT_URL}
 
-client API url: ${(process.env.CLIENT_URL || 'http://localhost:8081')}/api
   `);
 });

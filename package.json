@@ -12,11 +12,12 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack -d --watch",
-    "serve": "webpack-dev-server",
-    "server": "webpack -p --config webpack.server-config.babel.js && cd dist/ && node server.bundle.js",
-    "deploy": "webpack -p && webpack -p --config webpack.server-config.babel.js && cd dist/ && git add . && git commit -m 'deployment commit' && git push heroku master  -f",
+    "build": "bash tools/copy-assets.sh && webpack -p",
+    "dev": "bash tools/copy-assets.sh && webpack -d --watch",
+    "serve": "bash tools/copy-assets.sh && webpack-dev-server",
+    "server": "bash tools/copy-assets.sh && webpack -p --config webpack.server-config.babel.js && cd dist/ && node server.bundle.js",
+    "deploy:heroku": "bash tools/deployment.sh",
+    "clear": "bash tools/clear.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

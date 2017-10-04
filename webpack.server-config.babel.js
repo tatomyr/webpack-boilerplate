@@ -7,7 +7,6 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const PUBLIC_DIR = path.resolve(__dirname, 'dist/public')
 
-
 const serverConfig = {
   entry: SRC_DIR + '/server.js',
 

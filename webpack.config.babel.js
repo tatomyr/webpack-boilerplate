@@ -7,8 +7,6 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const PUBLIC_DIR = path.resolve(__dirname, 'dist/public')
 
-const config = {};
-
 const clientConfig = {
   entry: SRC_DIR + '/client.js',
 
@@ -28,12 +26,8 @@ const clientConfig = {
       {
         test: /\.scss?$/,
         include: SRC_DIR + '/components',
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      }
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ]
   },
 

@@ -18,6 +18,7 @@ const deploymentPackage = {
   dependencies: devPackage.dependencies,
 };
 
-console.log({ ...deploymentPackageTpl, ngines: devPackage.engines, dependencies: devPackage.dependencies });
+console.log('Deployment package.json file:');
+console.log(deploymentPackage);
 
 fs.writeFileSync('./dist/package.json', JSON.stringify(deploymentPackage));

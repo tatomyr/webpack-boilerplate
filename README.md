@@ -10,4 +10,4 @@ If you want to deploy frontend & backend on separated hosts, you'll have to spec
 
 ### deployment to heroku as an integrated server module
 
-To deploy on heroku (integrated server mode) you'll have to initialize a git repository in `dist/` folder & add a remote heroku repository with `heroku git:remote -a <heroku app repo>`. Afterward, you could deploy with `npm run deploy`. This will trigger a production build of server & client bundles [, adding a `package.json` to start the project on server] and pushing code to remote heroku repo (what means actually deploy).
+To deploy on heroku (integrated server mode) you'll have to initialize a git repository in `dist/` folder & add a remote heroku repository with `heroku git:remote -a <heroku app repo>`. Afterward, you could deploy with `npm run deploy:heroku`. This will trigger a production build of server & client bundles, adding a `package.json` to start the project on server and pushing code to remote heroku repo (what means actually deploy).
