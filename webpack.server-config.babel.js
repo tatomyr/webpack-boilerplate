@@ -1,11 +1,9 @@
 import webpack from 'webpack';
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const SRC_DIR = path.resolve(__dirname, 'src');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
-const PUBLIC_DIR = path.resolve(__dirname, 'dist/public')
 
 const serverConfig = {
   entry: SRC_DIR + '/server.js',
@@ -13,6 +11,7 @@ const serverConfig = {
   output: {
     path: BUILD_DIR,
     filename: 'server.bundle.js',
+    sourceMapFilename: 'server.js.map',
   },
 
   module: {
