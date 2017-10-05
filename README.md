@@ -1,5 +1,7 @@
 # webpack-boilerplate
 
+[![Known Vulnerabilities](https://snyk.io/test/github/tatomyr/webpack-boilerplate/badge.svg)](https://snyk.io/test/github/tatomyr/webpack-boilerplate)
+
 ## getting started
 
 To start phantom development server on `localhost:8080` type `npm run serve`. It allows you hot reloading for the client.

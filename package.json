@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "webpack-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -45,7 +45,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "express": "^4.15.5",
+    "express": "^4.16.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
