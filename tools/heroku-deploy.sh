@@ -1,5 +1,6 @@
 #!/bin/bash
 
+bash tools/print-header.sh
 echo "▸ Build for production"
 webpack -p
 webpack -p --config webpack.server-config.babel.js

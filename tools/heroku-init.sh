@@ -1,5 +1,6 @@
 #!/bin/bash
 
+bash tools/print-header.sh
 echo "▸ Initializing heroku environment"
 mkdir dist/
 cd dist/

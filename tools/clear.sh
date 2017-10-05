@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cd dist
 
+bash tools/print-header.sh
 echo "▸ Cleaning dist/ folder"
-
+cd dist
 ls -lhp
 rm package.json
 rm package-lock.json

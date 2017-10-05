@@ -14,12 +14,13 @@
   "scripts": {
     "build": "bash tools/copy-assets.sh && webpack -p",
     "dev": "bash tools/copy-assets.sh && webpack -d --watch",
-    "serve": "bash tools/copy-assets.sh && webpack-dev-server",
-    "server": "bash tools/copy-assets.sh && webpack -p --config webpack.server-config.babel.js && cd dist/ && node server.bundle.js",
+    "serve": "bash tools/copy-assets.sh && bash tools/serve.sh",
+    "server": "bash tools/copy-assets.sh && bash tools/server.sh",
     "heroku:init": "bash tools/heroku-init.sh",
     "heroku:deploy": "bash tools/heroku-deploy.sh",
     "clear": "bash tools/clear.sh",
     "lint": "eslint src/",
+    "start": "bash tools/start.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

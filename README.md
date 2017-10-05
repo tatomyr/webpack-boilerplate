@@ -7,6 +7,7 @@
 To start phantom development server on `localhost:8080` type `npm run serve`. It allows you hot reloading for the client.
 To build server bundle & start server on `localhost:8081` type `npm run server`.
 If you want to serve your client files on this server, you have to build your client bundle with `npm run dev` or `npm run build` previously.
+To simply start both development & backend servers with one command type `npm run start`.
 
 ## linting
 
