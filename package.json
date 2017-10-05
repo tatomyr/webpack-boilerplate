@@ -16,7 +16,8 @@
     "dev": "bash tools/copy-assets.sh && webpack -d --watch",
     "serve": "bash tools/copy-assets.sh && webpack-dev-server",
     "server": "bash tools/copy-assets.sh && webpack -p --config webpack.server-config.babel.js && cd dist/ && node server.bundle.js",
-    "deploy:heroku": "bash tools/deployment.sh",
+    "heroku:init": "bash tools/heroku-init.sh",
+    "heroku:deploy": "bash tools/heroku-deploy.sh",
     "clear": "bash tools/clear.sh",
     "lint": "eslint src/",
     "test": "echo \"Error: no test specified\" && exit 1"

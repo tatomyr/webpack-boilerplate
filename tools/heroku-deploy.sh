@@ -17,7 +17,7 @@ cd dist/
 git add . && git commit -m 'deployment commit'
 git push heroku master -f
 
-# ?
+# ? Excessive precautions
 git reset --soft HEAD^
 
 echo "◂"
