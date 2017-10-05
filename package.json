@@ -18,6 +18,7 @@
     "server": "bash tools/copy-assets.sh && bash tools/server.sh",
     "heroku:init": "bash tools/heroku-init.sh",
     "heroku:deploy": "bash tools/heroku-deploy.sh",
+    "heroku:watch": "bash tools/heroku-watch.sh",
     "clear": "bash tools/clear.sh",
     "lint": "eslint src/",
     "start": "bash tools/start.sh",

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Component from '../components/Component/index';
+import Component from '../components/Component';
 
 export default class AppContainer extends React.Component {
   static textToState(url, callback) {
