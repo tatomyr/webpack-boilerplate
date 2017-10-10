@@ -1,17 +1,15 @@
 #!/bin/bash
 
 bash tools/print-header.sh
-echo "▸ Build for production"
-webpack -p
-webpack -p --config webpack.server-config.babel.js
+
+# Building for production
+bash tools/build.sh
 
 echo "▸ Creating local package.json"
-babel-node tools/set-deployment.js
+babel-node tools/heroku/set-deployment.js
 
 echo "▸ Copying package-lock.json to dist/ folder"
 cp ./package-lock.json dist/package-lock.json
-# cp -r src/assets/ dist/public/assets/
-bash tools/copy-assets.sh
 
 echo "▸ Pushing to Heroku repository"
 cd dist/

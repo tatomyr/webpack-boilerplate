@@ -6,7 +6,7 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const PUBLIC_DIR = path.resolve(__dirname, 'dist/public');
 
 const clientConfig = {
-  entry: SRC_DIR + '/client.js',
+  entry: path.join(SRC_DIR, 'client.js'),
 
   output: {
     path: PUBLIC_DIR,
@@ -24,21 +24,21 @@ const clientConfig = {
       },
       {
         test: /\.scss?$/,
-        include: SRC_DIR + '/components',
+        include: path.join(SRC_DIR, 'components'),
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    ]
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
-      template: 'src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
-    })
-  ],
+      template: path.join(SRC_DIR, 'index.html'),
+    }),
 
+  ],
   devServer: {
-    contentBase: PUBLIC_DIR,
+    // This is needed for accessing files in defined folder from inside dev-server
+    contentBase: SRC_DIR,
   },
 
 };
